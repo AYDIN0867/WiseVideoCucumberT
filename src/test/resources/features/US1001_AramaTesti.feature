@@ -1,6 +1,6 @@
 
   Feature: US1001 kullanici testotomasyonu sayfasinda arama yapar
-
+   @smoke @regression
     Scenario:   TC01 kullanici testotomasyonu sayfasinda phone bulabilmeli
 
       Given kullanici trendyol anasayfaya gider
@@ -8,6 +8,7 @@
       Then arama sonucunda urun bulunabildiğini test eder
       And sayfayi kapatir
 
+@E2E_kullanıcı
 Scenario: TC02 kullanici test otomasyonu sayfasinda dress bulunabilmeli
 
   Given  kullanici trendyol anasayfaya gider
