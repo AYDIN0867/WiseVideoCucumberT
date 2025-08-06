@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class TrendyolPage {
 
     public TrendyolPage() {
@@ -16,6 +18,12 @@ public class TrendyolPage {
 
     @FindBy(xpath = "//*[@class='dscrptn dscrptn-V2']")
     public WebElement aramaSonucElementiYazisi;
+
+    @FindBy(xpath = "(//*[@class='chckbox'])[1]")
+    public WebElement iphoneIosCEpTelefonlariRadioButton;
+
+    @FindBy(xpath = "//*[@class='p-card-wrppr with-campaign-view']")
+    public List<WebElement> iphoneElementleriList;
 
 //
 

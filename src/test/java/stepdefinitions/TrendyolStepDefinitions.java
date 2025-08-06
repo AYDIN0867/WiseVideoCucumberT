@@ -56,4 +56,17 @@ public class TrendyolStepDefinitions {
         trendyolPage.searchBox.sendKeys("travel"+Keys.ENTER);
 
     }
+
+    @Then("ilk urunu tıklar")
+    public void ilk_urunu_tıklar() {
+
+    }
+
+    @Then("acilan sayfadaki urun isminin case sensetive olmadan phone icerdigini test eder")
+    public void acilan_sayfadaki_urun_isminin_case_sensetive_olmadan_phone_icerdigini_test_eder() {
+
+
+    }
+
+
 }
