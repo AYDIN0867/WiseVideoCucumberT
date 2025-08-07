@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import pages.TrendyolPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class TrendyolStepDefinitions {
 
@@ -21,7 +22,8 @@ public class TrendyolStepDefinitions {
     @When("arama kutusuna phone yazip aratir")
     public void arama_kutusuna_phone_yazip_aratir() {
 
-        trendyolPage.searchBox.sendKeys("phone"+ Keys.ENTER);
+        trendyolPage.searchBox.sendKeys("iphone"+ Keys.ENTER);
+        ReusableMethods.bekle(2);
 
 
 
@@ -60,13 +62,39 @@ public class TrendyolStepDefinitions {
     @Then("ilk urunu tıklar")
     public void ilk_urunu_tıklar() {
 
+        trendyolPage.iphoneIosCEpTelefonlariRadioButton.click();
+        ReusableMethods.bekle(2);
+        trendyolPage.iphoneElementleriList.get(0).click();
+
     }
 
     @Then("acilan sayfadaki urun isminin case sensetive olmadan phone icerdigini test eder")
     public void acilan_sayfadaki_urun_isminin_case_sensetive_olmadan_phone_icerdigini_test_eder() {
 
+        ReusableMethods.bekle(3);
+        String expectedIsimIcerik="iphone";
+        String actualUrunIsım=trendyolPage.ilkUrunElementi.getText().toLowerCase();
+        ReusableMethods.bekle(2);
+
+
+        Assertions.assertTrue(actualUrunIsım.contains(expectedIsimIcerik));
+
+
+
+    }
+
+    @When("arama kutusuna {string} yazip aratir")
+    public void arama_kutusuna_yazip_aratir(String aranacakKelime) {
+
+        trendyolPage.searchBox.sendKeys(aranacakKelime+Keys.ENTER);
 
     }
 
 
+    @And("kodları {int} saniye bekletir")
+    public void kodlarıSaniyeBekletir(int saniye) {
+
+        ReusableMethods.bekle(saniye);
+
+    }
 }

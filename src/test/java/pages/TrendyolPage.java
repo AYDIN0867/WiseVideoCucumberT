@@ -25,7 +25,9 @@ public class TrendyolPage {
     @FindBy(xpath = "//*[@class='p-card-wrppr with-campaign-view']")
     public List<WebElement> iphoneElementleriList;
 
-//
+   @FindBy(xpath = "//h1[@data-testid='product-title']")
+   public  WebElement ilkUrunElementi;
 
+//*[@class='product-title']
 
 }
