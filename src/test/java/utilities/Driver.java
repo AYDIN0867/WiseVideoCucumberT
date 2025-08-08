@@ -2,11 +2,14 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Driver {
 
@@ -41,7 +44,23 @@ public class Driver {
                     break;
 
                 default:
-                    driver = new ChromeDriver();
+                    // Chrome driver için özel ayarlar
+                    ChromeOptions options = new ChromeOptions();
+
+                    // Şifre yöneticisini ve bildirimleri kapat
+                    Map<String, Object> prefs = new HashMap<>();
+                    prefs.put("credentials_enable_service", false);
+                    prefs.put("profile.password_manager_enabled", false);
+                    prefs.put("profile.default_content_setting_values.notifications", 2); // Bildirimleri kapatır
+
+                    options.setExperimentalOption("prefs", prefs);
+                    options.addArguments("--disable-popup-blocking");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--disable-infobars");
+                    options.addArguments("--disable-save-password-bubble");
+                    options.addArguments("--disable-features=PasswordCheck");
+
+                    driver = new ChromeDriver(options);
 
             }
 

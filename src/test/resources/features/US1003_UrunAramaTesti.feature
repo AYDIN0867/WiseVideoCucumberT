@@ -1,6 +1,6 @@
 Feature: US1003 kullanici aradigi kelime icin uygun sonuc bulur
 
-  @wip
+
   Scenario: TC07 Kullanici aradigi kelime sonucunda bulunan urun isimlerini arattirdigi
              kelimeyi icerdigini test edebilmeli
 

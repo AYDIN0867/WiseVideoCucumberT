@@ -19,6 +19,8 @@ public class TrendyolPage {
     @FindBy(xpath = "//*[@class='dscrptn dscrptn-V2']")
     public WebElement aramaSonucElementiYazisi;
 
+    ////*[@class='dscrptn dscrptn-V2']
+
     @FindBy(xpath = "(//*[@class='chckbox'])[1]")
     public WebElement iphoneIosCEpTelefonlariRadioButton;
 

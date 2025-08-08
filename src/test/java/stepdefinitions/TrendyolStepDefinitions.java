@@ -97,4 +97,14 @@ public class TrendyolStepDefinitions {
         ReusableMethods.bekle(saniye);
 
     }
+
+    @Then("arama sonucunda urun bulunamadıgını test eder")
+    public void aramaSonucundaUrunBulunamadıgınıTestEder() {
+
+        String expectedAramaSonucu=ConfigReader.getProperty("toBulunamadıYazisiTrend");
+        String actualAramaSonucu=trendyolPage.aramaSonucElementiYazisi.getText().trim().replaceAll("\\s+", " ");
+
+        Assertions.assertEquals(expectedAramaSonucu,actualAramaSonucu);
+
+    }
 }
