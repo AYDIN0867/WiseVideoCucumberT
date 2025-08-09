@@ -4,12 +4,9 @@ import io.cucumber.java.en.*;
 
 public class ExcelStepDefinitions {
 
-    @When("excel dosyasi ile ilgili ayarlari yapip Sheet1'e gelir")
-    public void excel_dosyasi_ile_ilgili_ayarlari_yapip_sheet1_e_gelir() {
 
-    }
     @Then("urun excelindeki {string} daki urunun min. miktarini ve urun ismini kaydeder")
-    public void urun_excelindeki_daki_urunun_min_miktarini_ve_urun_ismini_kaydeder(String string) {
+    public void urun_excelindeki_daki_urunun_min_miktarini_ve_urun_ismini_kaydeder(String calisilanSatir) {
 
     }
     @Then("urun ismini testotomasyonu sayfasinda arar ve sonuc sayisini kaydeder")
@@ -25,13 +22,10 @@ public class ExcelStepDefinitions {
 
     }
 
+    @When("excel dosyasi ile ilgili ayarlari yapip Sheet{int}'e gelir")
+    public void excelDosyasiIleIlgiliAyarlariYapipSheetEGelir(int onemsiz) {
 
 
 
-
-
-
-
-
-
+    }
 }
