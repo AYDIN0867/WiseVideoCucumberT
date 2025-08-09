@@ -1,5 +1,5 @@
 Feature: US1006 kullanıcı yanlıs bilgilerle giriş yapamaz
-  @wip
+
   Scenario: TC11 kullanici gecerli email ve gecersiz password ile giris yapamamali
 
     Given kullanıcı testotomasyonu sayfasına gider

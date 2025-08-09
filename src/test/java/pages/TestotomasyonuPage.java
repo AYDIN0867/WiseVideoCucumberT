@@ -53,5 +53,8 @@ public class TestotomasyonuPage {
    @FindBy (xpath = "//*[@class='product-title text-center']")
    public WebElement yourCartSayfasindakiUrunIsmi;
 
+   @FindBy(xpath = "//*[@class='text-white']")
+    public WebElement CustomerNotFoundYazısı;
+
 
 }

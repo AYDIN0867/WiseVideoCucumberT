@@ -100,4 +100,53 @@ public class TestOtomasyonuStepDefinitions {
 
         testotomasyonuPage.bulunanUrunElementleriList.get(0).click();
     }
+
+    @Given("kullanıcı {string} sayfasına gider")
+    public void kullanıcıSayfasınaGider(String configDosyasiUrl) {
+
+        Driver.getDriver().get(ConfigReader.getProperty(configDosyasiUrl));
+    }
+
+    @When("arama kutusuna {string} yazip aratir")
+    public void arama_kutusuna_yazip_aratir(String aranacakKelime) {
+
+        testotomasyonuPage.aramaKutusu.sendKeys(aranacakKelime+Keys.ENTER);
+
+    }
+
+    @Then("testotomasyonu arama sonucunda urun bulunabildiğini test eder")
+    public void testotomasyonuAramaSonucundaUrunBulunabildiğiniTestEder() {
+
+        String actualAramaSonucu = testotomasyonuPage
+                .aramaSonucYaziElementi
+                .getText();
+        String unExpectedSonucYazisi = ConfigReader.getProperty("toBulunamadiYazisi");
+
+        Assertions.assertNotEquals(unExpectedSonucYazisi, actualAramaSonucu);
+    }
+
+    @When("email olarak listede verilen {string} girer")
+    public void emailOlarakListedeVerilenGirer(String featureDosyasındaVerilenEmail) {
+
+        testotomasyonuPage.loginSayfasiEmailKutusu.sendKeys(featureDosyasındaVerilenEmail);
+    }
+
+
+    @And("password olarak listede verilen {string} girer")
+    public void passwordOlarakListedeVerilenGirer(String featureDosyasındaVerilenPaswords) {
+
+        testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(featureDosyasındaVerilenPaswords);
+    }
+
+    @When("kodları {int} saniye bekletir")
+    public void kodları_saniye_bekletir(Integer saniye) {
+
+        ReusableMethods.bekle(saniye);
+
+    }
+    @Then("sayfayi kapatir")
+    public void sayfayi_kapatir() {
+
+        Driver.quitDriver();
+    }
 }
