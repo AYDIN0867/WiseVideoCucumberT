@@ -28,22 +28,10 @@ public class TrendyolStepDefinitions {
 
 
     }
-    @Then("arama sonucunda urun bulunabildiğini test eder")
-    public void arama_sonucunda_urun_bulunabildiğini_test_eder() {
 
 
-        String actualAramaSonucu=trendyolPage.aramaSonucElementiYazisi.getText();
-        String actualAramaSonucuRakam=actualAramaSonucu.replaceAll("\\D","");
-        int aramaSonucuRakam=Integer.parseInt(actualAramaSonucuRakam);
-        Assertions.assertNotEquals(0,aramaSonucuRakam);
 
-    }
-    @Then("sayfayi kapatir")
-    public void sayfayi_kapatir() {
 
-        Driver.quitDriver();
-
-    }
 
 
     @When("arama kutusuna dress yazip aratir")
@@ -66,6 +54,15 @@ public class TrendyolStepDefinitions {
         ReusableMethods.bekle(2);
         trendyolPage.iphoneElementleriList.get(0).click();
 
+        String currentHandle = Driver.getDriver().getWindowHandle();
+        for (String handle : Driver.getDriver().getWindowHandles()) {
+            if (!handle.equals(currentHandle)) {
+                Driver.getDriver().switchTo().window(handle);
+                break;
+                }
+
+            System.out.println(Driver.getDriver().getWindowHandles());
+            }
     }
 
     @Then("acilan sayfadaki urun isminin case sensetive olmadan phone icerdigini test eder")
@@ -79,24 +76,10 @@ public class TrendyolStepDefinitions {
 
         Assertions.assertTrue(actualUrunIsım.contains(expectedIsimIcerik));
 
-
-
-    }
-
-    @When("arama kutusuna {string} yazip aratir")
-    public void arama_kutusuna_yazip_aratir(String aranacakKelime) {
-
-        trendyolPage.searchBox.sendKeys(aranacakKelime+Keys.ENTER);
-
     }
 
 
-    @And("kodları {int} saniye bekletir")
-    public void kodlarıSaniyeBekletir(int saniye) {
 
-        ReusableMethods.bekle(saniye);
-
-    }
 
     @Then("arama sonucunda urun bulunamadıgını test eder")
     public void aramaSonucundaUrunBulunamadıgınıTestEder() {
@@ -107,4 +90,27 @@ public class TrendyolStepDefinitions {
         Assertions.assertEquals(expectedAramaSonucu,actualAramaSonucu);
 
     }
+
+
+
+
+    @And("trendyol arama sonucunda urun bulunabildiğini test eder")
+    public void trendyolAramaSonucundaUrunBulunabildiğiniTestEder() {
+
+        String actualAramaSonucu=trendyolPage.aramaSonucElementiYazisi.getText();
+        String actualAramaSonucuRakam=actualAramaSonucu.replaceAll("\\D","");
+        int aramaSonucuRakam=Integer.parseInt(actualAramaSonucuRakam);
+        Assertions.assertNotEquals(0,aramaSonucuRakam);
+
+
+
+    }
+
+    @And("test sayfayi kapatir")
+    public void testSayfayiKapatir() {
+
+        Driver.quitDriver();
+    }
+
+
 }

@@ -7,10 +7,10 @@ Feature: US1003 kullanici aradigi kelime icin uygun sonuc bulur
 
     Given kullanici trendyol anasayfaya gider
     When arama kutusuna phone yazip aratir
-    And arama sonucunda urun bulunabildiğini test eder
+    And trendyol arama sonucunda urun bulunabildiğini test eder
     Then ilk urunu tıklar
     And acilan sayfadaki urun isminin case sensetive olmadan phone icerdigini test eder
-    And sayfayi kapatir
+    And  test sayfayi kapatir
 
 
 
