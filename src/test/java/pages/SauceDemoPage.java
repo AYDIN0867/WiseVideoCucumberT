@@ -24,8 +24,22 @@ public class SauceDemoPage {
     @FindBy(id="login-button")
     public WebElement loginButton;
 
-    @FindBy(className = "inventory_item")
+    @FindBy(className = "inventory_item_description")
     public List<WebElement> sauceDemobulunanUrunElementleriList;
+//inventory_item_description
+    @FindBy(xpath = "//a[.='Sauce Labs Backpack']")
+    public WebElement ilkUrun;
+
+    @FindBy(id = "add-to-cart")
+    public WebElement addToCartButon;
+
+    @FindBy(className = "shopping_cart_link")
+    public WebElement sepet;
+
+   @FindBy(id = "item_4_title_link")
+    public WebElement sepettekiUrunIsmi;
+
+
 
 
 
