@@ -7,4 +7,3 @@ Feature: US1007 kullanici arama yaptigi urunun bulundugunu test eder
     And kodları 3 saniye bekletir
     Then testotomasyonu sayfasındaki ilk urunu tıklar
     And acilan sayfadaki urun isminin case sensetive olmadan config dosyasindaki toAranacakKelime icerdigini test eder
-    And sayfayi kapatir

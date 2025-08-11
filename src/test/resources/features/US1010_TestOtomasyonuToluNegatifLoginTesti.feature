@@ -10,7 +10,7 @@ Feature: US1010 Belirlenen bilgilerle giris yapılamadıgı kontrol edilir
     And kodları 2 saniye bekletir
     And signIn butonuna basar
     Then sisteme giris yapilamadıgını test eder
-    And sayfayi kapatir
+
 
     Examples:
       |verilenEmail                |verilenPassword     |

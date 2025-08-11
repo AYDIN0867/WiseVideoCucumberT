@@ -6,7 +6,7 @@ Feature: US1008 Kullanici toplu olarak verilen listedeki urunleri aratir
     When arama kutusuna "<AranacakKelimeler>" yazip aratir
     Then  testotomasyonu arama sonucunda urun bulunabildiğini test eder
     And kodları 1 saniye bekletir
-    And sayfayi kapatir
+
 
     Examples:
 

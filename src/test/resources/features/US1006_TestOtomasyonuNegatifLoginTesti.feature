@@ -1,3 +1,5 @@
+
+@wip
 Feature: US1006 kullanıcı yanlıs bilgilerle giriş yapamaz
 
   Scenario: TC11 kullanici gecerli email ve gecersiz password ile giris yapamamali

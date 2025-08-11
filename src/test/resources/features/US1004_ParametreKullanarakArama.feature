@@ -6,7 +6,7 @@ Feature: US1004 Kullanici parametre kullanarak istediği kelimeyi aratır
     When arama kutusuna "baby" yazip aratir
     Then arama sonucunda urun bulunabildiğini test eder
     And kodları 2 saniye bekletir
-    And sayfayi kapatir
+
 
     Scenario: TC09 kullanici bazi kelimeleri bulamamalı
 
@@ -14,7 +14,7 @@ Feature: US1004 Kullanici parametre kullanarak istediği kelimeyi aratır
       When  arama kutusuna "iddis" yazip aratir
       Then  arama sonucunda urun bulunamadıgını test eder
       And kodları 1 saniye bekletir
-      And sayfayi kapatir
+
 
 
 

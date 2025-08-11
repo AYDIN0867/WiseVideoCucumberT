@@ -1,7 +1,7 @@
 
 Feature: US1009 kullanici liste olarak verilen bilgilerle giris yapamaz
 
-  @wip
+
   Scenario Outline: TC16 liste olarak verilen bilgilerle giris yapamamalı
 
     Given kullanıcı "toUrl" sayfasına gider
