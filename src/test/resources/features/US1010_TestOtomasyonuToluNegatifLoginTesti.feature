@@ -1,6 +1,6 @@
 Feature: US1010 Belirlenen bilgilerle giris yapılamadıgı kontrol edilir
 
-
+ @paralel2
   Scenario Outline: TC17 Belirlenen  gecersiz bilgilerle  giris yapamamalı
 
     Given kullanıcı "toUrl" sayfasına gider

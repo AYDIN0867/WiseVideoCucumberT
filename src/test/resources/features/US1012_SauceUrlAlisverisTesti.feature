@@ -1,6 +1,6 @@
 Feature: US1012 kullanici alisveris yapar
 
-  @wip
+  @paralel1
   Scenario: TC19 Kullanici istedigi urunu sepete ekledigini test eder
 
     Given kullanıcı "sauceUrl" sayfasına gider

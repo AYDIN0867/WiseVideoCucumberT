@@ -2,6 +2,7 @@
 
 Feature: US1006 kullanıcı yanlıs bilgilerle giriş yapamaz
 
+  @paralel1
   Scenario: TC11 kullanici gecerli email ve gecersiz password ile giris yapamamali
 
     Given kullanıcı testotomasyonu sayfasına gider
@@ -12,7 +13,7 @@ Feature: US1006 kullanıcı yanlıs bilgilerle giriş yapamaz
     When sisteme giris yapilamadıgını test eder
     And sayfayi kapatir
 
-
+@paralel2
   Scenario: TC12 kullanici gecersiz email ve gecerli password ile giris yapamamali
 
     Given kullanıcı testotomasyonu sayfasına gider
