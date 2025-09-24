@@ -32,4 +32,8 @@ public class FacebookPage {
     @FindBy(xpath = "//button[@name='websubmit']")
     public WebElement signUpButonu;
 
+
+
+
+
 }

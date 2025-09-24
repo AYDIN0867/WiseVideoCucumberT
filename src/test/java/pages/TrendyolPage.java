@@ -32,4 +32,5 @@ public class TrendyolPage {
 
 //*[@class='product-title']
 
-}
+    //(//*[contains(@class, 'text-center')])[9] subscribe now text
+}   //(//*[@class='text-center'])[1]
